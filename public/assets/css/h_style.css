@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.6em;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  
+}
+
+.group {
+  display: flex;
+  align-items: center;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  gap: 15px;
+}
+
+header ul li {
+  list-style: none;
+  
+}
+
+.group.active-search .dropdown-menu,
+.group.active-search .user-dropdown-menu {
+  display: none;
+}
+
+header ul li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 0.8em;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+header ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+}
+
+header ul li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+
+.menuToggle {
+  position: relative;
+  display: none;
+}
+
+@media(max-width: 800px) {
+  .searchBtn {
+    left: 0;
+  }
+
+  .menuToggle {
+    position: absolute;
+    display: block;
+    font-size: 2em;
+    cursor: pointer;
+    transform: translateX(30px);
+    z-index: 10;
+  }
+
+  header .navigation {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    left: 100%;
+  }
+
+  header.open .navigation {
+    top: 80px;
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  header.open .navigation li a {
+    font-size: 1.25em;
+  }
+
+  header ul li a {
+    font-size: 0.8em; /* Decrease the font size for smaller screens */
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+header .dropdown {
+  position: relative;
+  z-index: 1000;
+}
+
+header .dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 999;
+}
+
+header .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+header .dropdown-menu li {
+  padding: 5px;
+}
+
+header .dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+header .dropdown-menu li a:hover {
+  background-color: #eaeaea;
+}
+
+header .group span {
+  font-family: 'Montserrat', sans-serif; /* Use the same font as other texts */
+  margin-left: 10px; /* Adjust the spacing as needed */
+}
+
+
+.box{
+  margin: 1px auto;
+  width: 300px;
+  height: 50px;
+}
+
+.container-2{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-2 input#search{
+  width: 0;
+  transition: width 0.55s ease;
+  height: 50px;
+  background: #ffffff;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #000000;
+  padding-right: 35px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #000000;
+ 
+  -webkit-transition: width .55s ease;
+  -moz-transition: width .55s ease;
+  -ms-transition: width .55s ease;
+  -o-transition: width .55s ease;
+  transition: width .55s ease;
+}
+
+.container-2 input#search::-webkit-input-placeholder {
+   color: #000000;
+}
+
+.container-2 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #000000;  
+}
+ 
+.container-2 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #000000;  
+}
+ 
+.container-2 input#search:-ms-input-placeholder {  
+   color: #000000;  
+}
+.container-2 input#search.active {
+  width: 300px; /* Expand when active */
+}
+.container-2 .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #333;
+}
+
+.container-2 input#search:focus, .container-2 input#search:active{
+  outline:none;
+  width: 300px;
+}
+ 
+.container-2:hover input#search{
+width: 300px;
+}
+ 
+.container-2:hover .icon{
+  color: #000000;
+}
+
+.hide {
+  display: none;
+}
+
